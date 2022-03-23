@@ -1,26 +1,33 @@
-module.exports = (app) =>{
-    app.get('/',(req,res)=>{
-        res.render('index.ejs')
-    })
-
-app.post('/',(req,res)=>{
+module.exports = (app) => {
     var conexao = require('../config/database')
-    conexao()
+    conexao ()
+    var mensagens = require('../models/mensagem')
+    var mygrids = require('../models/mygrid')
 
-    var modelo = require('../models/mensagem')
-
-    var documento = new modelo({
-        nome:req.body.first_name,
-        sobrenome:req.body.last_name,
-        email:req.body.email,
-        mensagem:req.body.message
-    })
-    .save()
-    .then(()=>{
-        res.redirect('/')
+app.get('/', async (req, res) => {
+    var mygrid = await mygrids.find ()
+    .then ( (mygrid)=>{
+        res.render('index.ejs',{dados:mygrid})
+        console.log(mygrid)
     })
     .catch(()=>{
-        res.send("Não foi possivel gravar o documento no Banco de Dados")
+        res.render('index.ejs')
+        })
     })
-})
+    app.post('/', (req, res) => {
+    
+    var documento = new mensagens ({
+        nome: req.body.first_name,
+        sobrenome: req.body.last_name,
+        email: req.body.email,
+        mensagem: req.body.message
+    })
+    .save()
+    .then( () => {
+        res.redirect('/')
+    })
+    .catch(() => {
+        res.send("Não foi possível gravar o documento no Banco de Dados")
+        })
+    })
 }
