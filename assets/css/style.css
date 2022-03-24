@@ -1,22 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:ital,wght@0,400;0700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Open+Sans:wght@400;700&display=swap');
+/*
+font-family: 'Montserrat', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html{
     font-size: 62.5%;
     scroll-behavior: smooth;
 }
 
-body {
+body{
     font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
-    color: #0A1128;
+    color: #0a1128;
     line-height: 1.5;
 }
 
-h1,h2,h3{
+h1, h2, h3{
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -45,21 +51,21 @@ p{
 }
 
 .main-bg{
-    background-image:url('../images/main-bg.svg');
+    background-image: url(../images/main-bg.svg);
     background-size: cover;
-    background-position:center center;
-    color: white;
+    background-position: center center;
+    color: #fff;
 }
 
 .white-bg{
-    background:white;
-    color: #0A1128;
+    background: #fff;
+    color: #0a1128;
 }
 
 .main-content{
     max-width: 120rem;
-    margin:0 auto;
-    padding: 10rem 3rem;
+    margin: 0 auto;
+    padding: 0.1rem 3rem;
 }
 
 .section{
@@ -82,7 +88,7 @@ body .full-width{
     right: 0;
     width: 100%;
     z-index: 1;
-    border-bottom: 0.1rem solid white;
+    border-bottom: 0.1rem solid #eeeeee;
 }
 
 .menu-content{
@@ -90,19 +96,19 @@ body .full-width{
     justify-content: space-between;
     align-items: center;
     padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0;
 }
 
 .menu h1{
     font-size: 2.3rem;
-    color: #0A1128;
+    color: #0a1128;
 }
 
 .menu h1 a{
     color: inherit;
 }
 
-.menu ul{
+.menu ul {
     list-style: none;
     display: flex;
 }
@@ -111,9 +117,10 @@ body .full-width{
     display: block;
     padding: 2rem;
     font-size: 1.8rem;
-    color: #0A1128;
+    color: #0a1128;
     position: relative;
 }
+
 .menu ul li a::after{
     content: '';
     position: absolute;
@@ -124,30 +131,38 @@ body .full-width{
     background: crimson;
     transition: all 300ms ease-in-out;
 }
+
 .menu ul li a:hover::after{
     width: 50%;
     left: 25%;
 }
+
 .close-menu{
     display: none;
 }
+
 .intro-content{
     position: relative;
-    /*top: -8rem;*/
+    /*top: -8rem */
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    gap:3rem;
+    gap: 3rem;
     min-height: 100vh;
 }
-.intro-text-content, .intro-img{
+
+.intro-text-content,
+.intro-img{
     display: flex;
-    flex-flow:column wrap ;
+    flex-flow: column wrap;
     justify-content: center;
 }
-.intro-img img, .intro-img svg{
+
+.intro-img img,
+.intro-img svg{
     max-width: 100%;
     height: auto;
 }
+
 .top3-content{
     max-width: 64rem;
     display: flex;
@@ -157,30 +172,36 @@ body .full-width{
     min-height: 100vh;
     text-align: center;
 }
+
 .grid-one-content{
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     min-height: 100vh;
 }
+
 .grid-main-heading{
-    margin-bottom: 1rem ;
+    margin-bottom: 1rem;
 }
+
 .grid-description{
     padding-bottom: 5rem;
 }
+
 .grid{
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
     counter-reset: grid-counter;
 }
+
 .grid h3{
     font-size: 3rem;
     position: relative;
     padding-left: 5rem;
     padding-bottom: 2rem;
 }
+
 .grid h3::before{
     counter-increment: grid-counter;
     content: counter(grid-counter);
@@ -191,93 +212,109 @@ body .full-width{
     left: -2rem;
     transform: rotate(5deg);
 }
+
 .gallery-img{
     width: 100%;
     max-width: 36rem;
     max-height: 36rem;
     overflow: hidden;
 }
+
 .gallery-img img{
     transition: all 300ms ease-in-out;
 }
+
 .gallery-img img:hover{
-    transform: translate(-3%, 3)scale(1.2) rotate(5deg);
+    transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
+
 .contact-form{
     grid-column: span 2;
 }
-.contact-form .form-grid {
-    border:none;
+
+.contact-form .form-grid{
+    border: none;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 3rem;
 }
-.form-grid legend {
+
+.form-grid legend{
     font-style: italic;
     font-size: 1.6rem;
     margin-bottom: 3rem;
 }
-.form-group {
+
+.form-group{
     flex: 1 1 320px;
 }
-.form-group label {
+
+.form-group label{
     display: block;
     margin-bottom: 1rem;
 }
-.form-group input, .form-group textarea {
+
+.form-group input, .form-group textarea{
     border: none;
-    background: white;
+    background: #fff;
     padding: 1.5rem 2rem;
     width: 100%;
     font-size: 3rem;
     outline: none;
 }
+
 .form-group input:focus, .form-group textarea:focus{
-    box-shadow: 0 0 10px 2px crimson;
+    box-shadow:0 0 10px 2px crimson;
 }
+
 .form-group button{
-    border: 0.5rem solid white;
+    border: .5rem solid #fff;
     background: none;
-    color: white;
+    color: #fff;
     padding: 1.5rem 2rem;
     font-size: 3rem;
     cursor: pointer;
     transition: all 300ms ease-in-out;
 }
+
 .form-group button:hover{
-    background: white;
-    color: #0A1128;
+    background: #fff;
+    color: #0a1128;
 }
+
 .form-group ::placeholder{
-    color:#EEEEEE;
+    color: #eeeeee;
 }
+
 .footer{
     text-align: center;
     font-size: 1.6rem;
 }
+
 .footer a{
-    color: #0A1128;
+    color: #0a1128;
 }
+
 .heart{
-    color: crimson;
+    color:  crimson;
 }
+
 .footer p{
     margin: 0;
     padding: 3rem;
 }
+
 .back-to-top{
     position: fixed;
     bottom: 2rem;
     right: 2rem;
-    background: white;
+    background: #fff;
     width: 5rem;
     height: 5rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    color: #0A1128;
     transform: rotate(-90deg);
-    border: 0.1rem solid #0A1128;
+    border: .1rem solid #0a1128;
 }
