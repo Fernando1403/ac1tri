@@ -5,17 +5,16 @@ module.exports = (app) =>{
 
     var modelo = require('../models/mensagem')
 
-    var mygrid = require('../models/mygrid')
+    var mygrids = require('../models/mygrid')
+
+    var gallery = require('../models/gallery')
 
 
     app.get('/', async(req, res)=>{
-        mygrid.find()
-        .then((mygrid)=>{
-            res.render('index.ejs', {dados:mygrid})
-        })
-        .catch(()=>{
-            res.render('index.ejs')
-        })
+        var mygrid = await mygrids.find().limit(6).sort({'_id':-1})
+        var imagens = await gallery.find().limit(6).sort({'_id':-1})
+        
+        res.render('index.ejs', {dados:mygrid,gallery:imagens})
         
     })
 

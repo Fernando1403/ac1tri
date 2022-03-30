@@ -71,24 +71,11 @@
         <div class="main-content grid-one-content">
             <h2 class="grid-main-heading">Gallery</h2>
             <div class="grid">
+                <% for(var i=0; i<gallery.length; i++){%>
                 <div class="gallery-img">
-                    <img src="http://source.unsplash.com/random/360x360?r=1" alt="random image from uunsplash">
+                    <img src="./assets/images/<%=gallery[i].arquivo%>" alt="random image from uunsplash">
                 </div>
-                <div class="gallery-img">
-                    <img src="http://source.unsplash.com/random/360x360?r=2" alt="random image from uunsplash">
-                </div>
-                <div class="gallery-img">
-                    <img src="http://source.unsplash.com/random/360x360?r=3" alt="random image from uunsplash">
-                </div>
-                <div class="gallery-img">
-                    <img src="http://source.unsplash.com/random/360x360?r=4" alt="random image from uunsplash">
-                </div>
-                <div class="gallery-img">
-                    <img src="http://source.unsplash.com/random/360x360?r=5" alt="random image from uunsplash">
-                </div>
-                <div class="gallery-img">
-                    <img src="http://source.unsplash.com/random/360x360?r=6" alt="random image from uunsplash">
-                </div>
+                <%}%>
             </div>
         </div>
     </section>
@@ -132,7 +119,7 @@
     </section>
 
     <footer id="footer" class="footer white-bg">
-        <p><a href="#" rel="nofollow" target="_blank">Feito com <span class="heart">❤</span> - Pelo Bolivia AC - 1 Trimestre - INW | BD2 | LP2</a></p>
+        <p><a href="#" rel="nofollow" target="_blank">Feito com <span class="heart">❤</span>Pelo Lore - AC - 1 Trimestre - INW | BD2 | LP2</a></p>
     </footer>
 
     <a href="#" class="back-to-top">▶</a>
