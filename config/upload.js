@@ -32,6 +32,6 @@ var upload = multer({
             return cb(new Error('Tipo de Arquivo inválido !'))
         }
     }
-}).single('imagem')
+})
 
 module.exports = upload
